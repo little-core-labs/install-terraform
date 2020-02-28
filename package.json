@@ -1,6 +1,6 @@
 {
   "name": "install-terraform",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "private": true,
   "description": "Install Terraform at any version to a Github Action Job environment",
   "main": "index.js",

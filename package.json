@@ -12,7 +12,9 @@
     "type": "git",
     "url": "git+https://github.com/little-core-labs/install-terraform.git",
     "release": "git push --follow-tags && gh-release",
-    "version": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md"
+    "version": "run-s version:*",
+    "version:1-changelog": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md",
+    "version:2-cleandeps": "mv node_modules tmp_modules && npm i --only=prod && git add node_modules --force"
   },
   "keywords": [
     "github",
@@ -25,6 +27,9 @@
     "url": "https://github.com/little-core-labs/install-terraform/issues"
   },
   "homepage": "https://github.com/little-core-labs/install-terraform#readme",
+  "dependencies": {
+    "@actions/core": "1.2.2"
+  },
   "devDependencies": {
     "auto-changelog": "^1.16.2",
     "gh-release": "^3.5.0",

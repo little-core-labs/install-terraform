@@ -6,15 +6,15 @@
   "main": "index.js",
   "scripts": {
     "test": "run-s test:*",
-    "test:standard": "standard"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/little-core-labs/install-terraform.git",
+    "test:standard": "standard",
     "release": "git push --follow-tags && gh-release",
     "version": "run-s version:*",
     "version:1-changelog": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md",
     "version:2-cleandeps": "mv node_modules tmp_modules && npm i --only=prod && git add node_modules --force"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/little-core-labs/install-terraform.git"
   },
   "keywords": [
     "github",

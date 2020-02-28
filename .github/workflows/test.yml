@@ -23,4 +23,7 @@ jobs:
         npm test
     - name: Install Terraform
       uses: little-core-labs/install-terraform@master
+    - name: Terraform version
+      run: |
+        terraform version
 

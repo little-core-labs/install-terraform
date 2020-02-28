@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/little-core-labs/install-terraform.git",
     "release": "git push --follow-tags && gh-release",
-    "version": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md",
+    "version": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md"
   },
   "keywords": [
     "github",

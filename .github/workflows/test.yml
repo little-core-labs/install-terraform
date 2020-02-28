@@ -22,5 +22,5 @@ jobs:
         npm i
         npm test
     - name: Install Terraform
-      uses: little-core-labs/install-terraform@master
+      uses: little-core-labs/install-terraform@${{ github.head_ref }}
 

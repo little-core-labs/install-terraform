@@ -33,5 +33,10 @@
     "auto-changelog": "^1.16.2",
     "gh-release": "^3.5.0",
     "standard": "^14.3.1"
+  },
+  "standard": {
+    "ignore": [
+      "dist"
+    ]
   }
 }

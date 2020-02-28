@@ -21,7 +21,7 @@ None.
 ### Example workflow
 
 ```yaml
-name: Example cleaning up xvfb
+name: Example installing Terraform
 
 on: [push]
 

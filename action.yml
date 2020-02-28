@@ -1,8 +1,14 @@
-name: 'Cleanup xvfb'
-description: 'Cleanup any lingering xvfb pids'
+name: 'Install Terraform'
+description: 'Installs any version of terraform to the current job environment'
 branding:
-  icon: monitor
-  color: yellow
+  icon: type
+  color: purple
 runs:
   using: 'node12'
   main: 'index.js'
+inputs:
+  version:
+    description: 'Version of terraform to download'
+    required: false
+    default: 0.12.21
+outputs: # none

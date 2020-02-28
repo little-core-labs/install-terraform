@@ -1,7 +1,7 @@
-# cleanup-xvfb
-Clean up any remaining xvfb processes leftover in a Github Action.
+# install-terraform
+Install Terraform to a Github Actions job environment.
 
-<a href="https://github.com/bcomnes/cleanup-xvfb"><img alt="GitHub Actions status" src="https://github.com/bcomnes/cleanup-xvfb/workflows/Tests/badge.svg"></a>
+<a href="https://github.com/little-core-labs/install-terraform"><img alt="GitHub Actions status" src="https://github.com/little-core-labs/install-terraform/workflows/Tests/badge.svg"></a>
 
 
 ## Usage
@@ -12,7 +12,7 @@ Create a workflow `.yml` file in your repositories `.github/workflows` directory
 
 ### Inputs
 
-None.
+- `version`: The version of terraform to install. Default: 0.12.21
 
 ### Outputs
 
@@ -36,19 +36,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: sudo apt-get install xvfb
-    - name: npm install, build, and test
+    - name: Install Terraform
+      uses: little-core-labs/install-terraform@v1
+    - name: Terraform apply
       run: |
-        npm i
-        xvfb-run --auto-servernum npm test
-      env:
-        CI: true
-    - name: Cleanup xvfb pidx
-      uses: bcomnes/cleanup-xvfb@v1
+        terraform init
+        terraform plan
+        terraform apply -auto-approve
 ```
 
 ## Contributing

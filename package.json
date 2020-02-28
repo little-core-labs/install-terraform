@@ -7,8 +7,7 @@
   "scripts": {
     "test": "standard",
     "release": "git push --follow-tags && gh-release",
-    "version": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md",
-    "prepare": "ncc build index.js -o dist -s"
+    "version": "ncc build index.js -o dist -s && auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md dist"
   },
   "repository": {
     "type": "git",

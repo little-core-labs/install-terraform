@@ -45,8 +45,5 @@ jobs:
         terraform apply -auto-approve
 ```
 
-## Contributing
-PRs welcome.  Honor and respect.
-
 ## License
 The scripts and documentation in this project are released under the [MIT License](LICENSE)

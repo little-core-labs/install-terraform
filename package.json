@@ -26,10 +26,10 @@
   },
   "homepage": "https://github.com/little-core-labs/install-terraform#readme",
   "dependencies": {
-    "@actions/core": "1.2.2"
+    "@actions/core": "1.2.4"
   },
   "devDependencies": {
-    "@zeit/ncc": "^0.21.1",
+    "@zeit/ncc": "^0.22.3",
     "auto-changelog": "^2.2.0",
     "gh-release": "^3.5.0",
     "standard": "^14.3.1"

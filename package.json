@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@zeit/ncc": "^0.21.1",
-    "auto-changelog": "^1.16.2",
+    "auto-changelog": "^2.2.0",
     "gh-release": "^3.5.0",
     "standard": "^14.3.1"
   },

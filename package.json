@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "standard",
-    "release": "git push --follow-tags && gh-release",
+    "release": "git push --follow-tags && gh-release -y",
     "version": "npm run build && auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md dist",
     "build": "rm -rf dist && ncc build index.js -o dist -s"
   },

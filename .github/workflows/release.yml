@@ -1,0 +1,34 @@
+name: npm bump
+
+on:
+  workflow_dispatch:
+    inputs:
+      newversion:
+        description: 'npm version {major,minor,patch}'
+        required: true
+
+env:
+  node_version: 14
+
+jobs:
+  version_and_release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.3.2
+      with:
+        # fetch full history so things like auto-changelog work properly
+        fetch-depth: 012core@littlstar.com
+    - name: Use Node.js ${{ env.node_version }}
+      uses: actions/setup-node@v2.1.1
+      with:
+        node-version: ${{ env.node_version }}
+        # setting a registry enables the NODE_AUTH_TOKEN env variable where we can set an npm token.  REQUIRED
+        registry-url: 'https://registry.npmjs.org'
+    - run: npm i
+    - uses: bcomnes/npm-bump@v2.0.1
+      with:
+        git_email: 12core@littlstar.com
+        git_username: ${{ github.actor }}
+        newversion: ${{ github.event.inputs.newversion }}
+        publish_cmd: npm run release # dont publish to a registry. set up something else in a different script
+        github_token: ${{ secrets.GITHUB_TOKEN }} # built in actions token.  Passed tp gh-release if in use.

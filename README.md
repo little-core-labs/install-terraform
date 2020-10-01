@@ -45,5 +45,26 @@ jobs:
         terraform apply -auto-approve
 ```
 
+## FAQ
+
+### Can you offer a major version tag/branch alias?  I want automatic updates!
+
+Nope!  This was always weird/bad pattern of github actions.  Luckily github offers a solution for this.  Create a `.github/dependabot.yml` with, at a minimum, the following config:
+
+```yaml
+# Basic dependabot.yml file with
+# minimum configuration for two package managers
+
+version: 2
+updates:
+  # Enable updates to github actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+
+```
+
+
 ## License
 The scripts and documentation in this project are released under the [MIT License](LICENSE)

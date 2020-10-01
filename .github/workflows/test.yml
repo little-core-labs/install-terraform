@@ -2,6 +2,9 @@ name: Tests
 
 on: [push]
 
+env:
+  tf-version: 0.13.4
+
 jobs:
   build:
 
@@ -9,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [14]
 
     steps:
     - uses: actions/checkout@v1
@@ -23,6 +26,8 @@ jobs:
         npm test
     - name: Install Terraform
       uses: little-core-labs/install-terraform@master
+      with:
+          version: ${{ env.tf-version }}
     - name: Terraform version
       run: |
         terraform version

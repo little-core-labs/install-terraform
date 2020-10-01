@@ -9,6 +9,5 @@ runs:
 inputs:
   version:
     description: 'Version of terraform to download'
-    required: false
-    default: 0.12.21
+    required: true
 # outputs: none

@@ -12,7 +12,7 @@ Create a workflow `.yml` file in your repositories `.github/workflows` directory
 
 ### Inputs
 
-- `version`: The version of terraform to install. Default: 0.12.21
+- `version`: The version of terraform to install. Required.
 
 ### Outputs
 
@@ -37,7 +37,9 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Install Terraform
-      uses: little-core-labs/install-terraform@v1
+      uses: little-core-labs/install-terraform@v2.0.0
+      with:
+          version: 0.13.4
     - name: Terraform apply
       run: |
         terraform init

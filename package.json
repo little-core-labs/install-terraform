@@ -32,7 +32,7 @@
     "@zeit/ncc": "^0.22.3",
     "auto-changelog": "^2.2.0",
     "gh-release": "^4.0.3",
-    "standard": "^14.3.1"
+    "standard": "^15.0.0"
   },
   "standard": {
     "ignore": [

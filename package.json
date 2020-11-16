@@ -29,7 +29,7 @@
     "@actions/core": "1.2.6"
   },
   "devDependencies": {
-    "@zeit/ncc": "^0.22.3",
+    "@vercel/ncc": "^0.22.3",
     "auto-changelog": "^2.2.0",
     "gh-release": "^4.0.3",
     "standard": "^16.0.0"

@@ -31,7 +31,7 @@
   "devDependencies": {
     "@vercel/ncc": "^0.28.0",
     "auto-changelog": "^2.2.0",
-    "gh-release": "^5.0.0",
+    "gh-release": "^6.0.0",
     "standard": "^16.0.0"
   },
   "standard": {

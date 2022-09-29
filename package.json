@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/little-core-labs/install-terraform#readme",
   "dependencies": {
-    "@actions/core": "1.8.2"
+    "@actions/core": "1.10.0"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.34.0",
